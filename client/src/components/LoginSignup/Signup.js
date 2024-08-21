@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './Signup.module.css';
 
 const Signup = () => {
@@ -74,6 +74,9 @@ const Signup = () => {
                 {error && <p className="error">{error}</p>}
                 {success && <p className="success">{success}</p>}
             </form>
+            <p>
+                Already have an account? <Link to="/login">Login here</Link>
+            </p>
         </div>
     );
 };
