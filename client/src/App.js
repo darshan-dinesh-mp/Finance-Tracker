@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Dashboard from './components/Dashboard';
+import Login from './components/LoginSignup/Login';
+import Signup from './components/LoginSignup/Signup';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem('userId'); // Check if user is authenticated
+  const isAuthenticated = !!localStorage.getItem('userId');
 
   return (
     <BrowserRouter>

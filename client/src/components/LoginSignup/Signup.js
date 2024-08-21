@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './Signup.module.css';
 
 const Signup = () => {
     const [name, setName] = useState('');
@@ -36,9 +37,9 @@ const Signup = () => {
     };
 
     return (
-        <div className="signup-container">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSignup}>
+        <div className={styles.signupContainer}>
+            <h2 className={styles.signupTitle}>Signup</h2>
+            <form className={styles.signupForm} onSubmit={handleSignup}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input

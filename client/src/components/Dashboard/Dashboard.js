@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
@@ -73,7 +74,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="dashboard-container">
+        <div className={styles['dashboard-container']}>
             <h2>Finance Dashboard</h2>
             <form onSubmit={handleAddTransaction}>
                 <div>
@@ -134,7 +135,7 @@ const Dashboard = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="type">Payment Method:</label>
+                    <label htmlFor="paymentMethod">Payment Method:</label>
                     <select
                         id="paymentMethod"
                         value={paymentMethod}
@@ -147,8 +148,8 @@ const Dashboard = () => {
                     </select>
                 </div>
                 <button type="submit">Add Transaction</button>
-                {error && <p className="error">{error}</p>}
-                {success && <p className="success">{success}</p>}
+                {error && <p className={styles.error}>{error}</p>}
+                {success && <p className={styles.success}>{success}</p>}
             </form>
             <h3>Transaction List</h3>
             <table>
@@ -178,7 +179,7 @@ const Dashboard = () => {
                 </tbody>
             </table>
 
-            <button onClick={handleLogout}>Logout</button>
+            <button className={styles['logout-button']} onClick={handleLogout}>Logout</button>
         </div>
     );
 };
