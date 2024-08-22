@@ -35,36 +35,41 @@ const Login = () => {
     };
 
     return (
-        <div className={styles.loginContainer}>
-            <h2 className={styles.loginTitle}>Login</h2>
-            <form className={styles.loginForm} onSubmit={handleLogin}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button className={styles.loginButton} type="submit">Login</button>
-                {error && <p className={styles.error}>{error}</p>}
-                {success && <p className={styles.success}>{success}</p>}
-            </form>
-            <p>
-                Don't have an account? <Link to="/signup">Signup here</Link>
-            </p>
+        <div className={styles.mainContainer}>
+            <div className={styles.thumbnail}>
+                <h1>Finance Tracker</h1>
+            </div>
+            <div className={styles.loginContainer}>
+                <h2>Login</h2>
+                <form className={styles.loginForm} onSubmit={handleLogin}>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button className={styles.loginButton} type="submit">Login</button>
+                    {error && <p className={styles.error}>{error}</p>}
+                    {success && <p className={styles.success}>{success}</p>}
+                </form>
+                <p>
+                    Don't have an account? <Link to="/signup">Signup here</Link>
+                </p>
+            </div>
         </div>
     );
 };

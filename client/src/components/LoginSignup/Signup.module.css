@@ -1,57 +1,103 @@
-.signupContainer {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
 }
 
-.signupTitle {
-    text-align: center;
-    margin-bottom: 20px;
+
+.signupContainer {
+    width: 50%;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.signupContainer h2{
+    text-align: left;
+}
+
+.thumbnail {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    height: 100vh;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: left;
+    width: 100%;
     font-size: 24px;
     color: #333;
+    margin-bottom: 20px;
 }
 
-.signupForm div {
-    margin-bottom: 15px;
-}
-
-.signupForm label {
-    display: block;
+label {
+    color: gray;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-size: 14px;
 }
 
-.signupForm input {
-    width: 100%;
+input {
     padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 .signupButton {
-    width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    width: 100%;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .signupButton:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
 .error {
     color: red;
+    font-size: 14px;
     margin-top: 10px;
 }
 
 .success {
     color: green;
+    font-size: 14px;
     margin-top: 10px;
 }
-/* Other styles similar to signup.module.css, but with .signupContainer, .signupButton, etc. */
+
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

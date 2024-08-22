@@ -119,7 +119,7 @@ const Dashboard = () => {
                     <label htmlFor="description">Description:</label>
                     <textarea
                         id="description"
-                        value={description}
+                        value={description} 
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
