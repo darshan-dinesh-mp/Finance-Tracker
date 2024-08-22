@@ -25,7 +25,7 @@ const Login = () => {
                 localStorage.setItem('userId', result.user.uid); // Store userId in localStorage
                 setSuccess(result.message);
                 console.log(success)
-                navigate('/dashboard'); // Redirect to dashboard
+                navigate('/home'); // Redirect to dashboard
             } else {
                 setError(result.error);
             }
