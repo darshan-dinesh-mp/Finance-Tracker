@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import styles from "./Dashboard.module.css"
+import styles from './AddTransaction.module.css';
 
 const AddTransaction = () => {
   const [name, setName] = useState('');
@@ -37,10 +37,10 @@ const AddTransaction = () => {
   };
 
   return (
-    <div className={styles['dashboard-container']}>
-      <h2>Finance Dashboard</h2>
+    <div className={styles.AddTransactionContainer}>
+      <h2>Add New Transaction</h2>
       <form onSubmit={handleAddTransaction}>
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="name">Transaction Name:</label>
           <input
             type="text"
@@ -50,7 +50,8 @@ const AddTransaction = () => {
             required
           />
         </div>
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="amount">Amount:</label>
           <input
             type="number"
@@ -60,8 +61,8 @@ const AddTransaction = () => {
             required
           />
         </div>
-        <br />
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="category">Category:</label>
           <input
             type="text"
@@ -69,9 +70,9 @@ const AddTransaction = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
-
         </div>
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="date">Date:</label>
           <input
             type="date"
@@ -80,15 +81,17 @@ const AddTransaction = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
+          ></textarea>
         </div>
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="type">Transaction Type:</label>
           <select
             id="type"
@@ -99,7 +102,8 @@ const AddTransaction = () => {
             <option value="Income">Income</option>
           </select>
         </div>
-        <div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="paymentMethod">Payment Method:</label>
           <select
             id="paymentMethod"
@@ -112,10 +116,14 @@ const AddTransaction = () => {
             <option value="Cash">Cash</option>
           </select>
         </div>
-        <button type="submit">Add Transaction</button>
+
+        <button type="submit" className={styles.submitButton}>
+          Add Transaction
+        </button>
         {error && <p className={styles.error}>{error}</p>}
       </form>
     </div>
+
   )
 }
 
