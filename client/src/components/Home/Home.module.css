@@ -13,6 +13,7 @@
     gap: 10px;
     padding: 0px 2px 0px 2px;
     padding: 0px 20px 0px 20px;
+    height: 100%;
 }
 
 .sidebar h2 {
@@ -21,21 +22,25 @@
 }
 
 
-.sidebar a {
+.sidebar span {
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition-duration: 0.3s;
     text-decoration: none;
     border-radius: 5px;
-}
-
-.tab:hover,
-.tab.active {
-    background-color: #007bff;
 }
 
 .tab {
     color: white;
     padding: 10px;
+    font-weight: 100;
+}
+
+.tab:hover{
+    transform: translateX(10px);
+}
+.tab.active {
+    transform: translateX(10px);
+    font-weight: 600;
 }
 
 .content {
@@ -52,11 +57,10 @@
 .logout {
     color: red;
     transition-duration: 300ms;
-    border: 1px solid red;
     padding: 10px;
+    font-weight: 700;
 }
 
 .logout:hover {
-    background-color: red;
-    color: white;
+    transform: translateX(10px)
 }
