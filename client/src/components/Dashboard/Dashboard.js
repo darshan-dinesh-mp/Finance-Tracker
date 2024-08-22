@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Dashboard.module.css';
 
-const   Dashboard = () => {
+const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
