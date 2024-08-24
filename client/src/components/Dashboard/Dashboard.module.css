@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition-duration: 0.3s, 0.3s;
 }
 
 .transaction-item:hover {
@@ -43,26 +43,44 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     transition: transform 0.3s ease-out;
 }
 
 .popup-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     position: relative;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+p {
+    margin: 8px 0;
+    color: #666666;
+    font-size: 1.1rem;
+}
+
+strong {
+    color: #333333;
+    font-size: 1.1rem;
 }
 
 .closeButton {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
     fill: gray;
     transition: fill 0.2s;
@@ -70,20 +88,4 @@
 
 .closeButton:hover {
     fill: #000000;
-}
-
-h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2rem;
-    color: #333333;
-}
-
-p {
-    margin: 5px 0;
-    color: #666666;
-}
-
-strong {
-    color: #333333;
 }

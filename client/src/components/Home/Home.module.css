@@ -60,7 +60,6 @@
 
 .logout {
     color: red;
-    transition-duration: 300ms;
     padding: 10px;
     font-weight: 700;
 }
