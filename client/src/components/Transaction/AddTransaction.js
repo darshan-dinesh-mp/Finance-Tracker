@@ -43,6 +43,18 @@ const AddTransaction = () => {
     <div className={styles.AddTransactionContainer}>
       <h2>Add New Transaction</h2>
       <form onSubmit={handleAddTransaction}>
+
+        <div className={styles.formGroup}>
+          <label htmlFor="type">Transaction Type:</label>
+          <select
+            id="type"
+            value={transactionType}
+            onChange={(e) => setTransactionType(e.target.value)}
+          >
+            <option value="Expense">Expense</option>
+            <option value="Income">Income</option>
+          </select>
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="name">Transaction Name:</label>
           <input
@@ -92,18 +104,6 @@ const AddTransaction = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor="type">Transaction Type:</label>
-          <select
-            id="type"
-            value={transactionType}
-            onChange={(e) => setTransactionType(e.target.value)}
-          >
-            <option value="Expense">Expense</option>
-            <option value="Income">Income</option>
-          </select>
         </div>
 
         <div className={styles.formGroup}>
