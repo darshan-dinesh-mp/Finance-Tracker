@@ -4,6 +4,7 @@ import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
+    const [selectedTransaction, setSelectedTransaction] = useState(null);
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
 
@@ -30,35 +31,65 @@ const Dashboard = () => {
         }
     }, [userId, navigate, fetchTransactions]);
 
+    const handleTransactionClick = (transaction) => {
+        setSelectedTransaction(transaction);
+    };
+
+    const closePopup = () => {
+        setSelectedTransaction(null);
+    };
+
     return (
         <div className={styles['dashboard-container']}>
-            <h3>Transaction List</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Type</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Method</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {transactions.map((transaction) => (
-                        <tr key={transaction.id}>
-                            <td>{transaction.name}</td>
-                            <td>${transaction.amount}</td>
-                            <td>{transaction.transactionType}</td>
-                            <td>{transaction.category || 'N/A'}</td>
-                            <td>{transaction.date ? new Date(transaction.date).toLocaleDateString() : 'N/A'}</td>
-                            <td>{transaction.description || 'N/A'}</td>
-                            <td>{transaction.paymentMethod || 'N/A'}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <h3>Transactions</h3>
+            <div className={styles['transaction-list']}>
+                {transactions.map((transaction) => (
+                    <div
+                        key={transaction.id}
+                        className={styles['transaction-item']}
+                        onClick={() => handleTransactionClick(transaction)}
+                    >
+                        <div>{transaction.name}</div>
+                        <span
+                            className={
+                                transaction.transactionType === 'Income'
+                                    ? styles['income-amount']
+                                    : styles['expense-amount']
+                            }
+                        >
+                            {transaction.transactionType === 'Income' ? '↑' : '↓'}₹{transaction.amount}
+                        </span>
+                    </div>
+                ))}
+            </div>
+
+            {selectedTransaction && (
+                <div className={styles['transaction-popup']}>
+                    <div className={styles['popup-content']}>
+                        <button className={styles['close-button']} onClick={closePopup}>
+                            X
+                        </button>
+                        <h4>{selectedTransaction.name}</h4>
+                        <p>
+                            <strong>Amount:</strong> ₹
+                            <span
+                                className={
+                                    selectedTransaction.transactionType === 'Income'
+                                        ? styles['income-amount']
+                                        : styles['expense-amount']
+                                }
+                            >
+                                {selectedTransaction.amount}
+                            </span>
+                        </p>
+                        <p><strong>Type:</strong> {selectedTransaction.transactionType}</p>
+                        <p><strong>Category:</strong> {selectedTransaction.category || 'N/A'}</p>
+                        <p><strong>Date:</strong> {selectedTransaction.date ? new Date(selectedTransaction.date).toLocaleDateString() : 'N/A'}</p>
+                        <p><strong>Description:</strong> {selectedTransaction.description || 'N/A'}</p>
+                        <p><strong>Method:</strong> {selectedTransaction.paymentMethod || 'N/A'}</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
