@@ -7,6 +7,7 @@ import AddTransaction from '../Transaction/AddTransaction';
 const Home = () => {
     const [activeTab, setActiveTab] = useState('dashboard');
     const navigate = useNavigate();
+    const username = localStorage.getItem('username');
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
@@ -20,8 +21,8 @@ const Home = () => {
     return (
         <div className={styles.homeContainer}>
             <div className={styles.sidebar}>
-                <div  className={styles.tabsContainer}>
-                <h2>Finance Tracker</h2>
+                <div className={styles.tabsContainer}>
+                    <h2>Finance Tracker</h2>
                     <span
                         className={`${styles.tab} ${activeTab === 'dashboard' ? styles.active : ''}`}
                         onClick={() => handleTabChange('dashboard')}
@@ -36,7 +37,7 @@ const Home = () => {
                     </span>
                 </div>
                 <div className={styles.userSection}>
-                    <span className={styles.username}>John Doe</span>
+                    <span className={styles.username}>{username}</span>
                     <span
                         className={styles.logout}
                         onClick={handleLogout}

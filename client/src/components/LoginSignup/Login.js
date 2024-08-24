@@ -22,10 +22,10 @@ const Login = () => {
 
             const result = await response.json();
             if (response.ok) {
-                localStorage.setItem('userId', result.user.uid); // Store userId in localStorage
+                localStorage.setItem('userId', result.userData.uid);
+                localStorage.setItem('username', result.userData.name);
                 setSuccess(result.message);
-                console.log(success)
-                navigate('/home'); // Redirect to dashboard
+                navigate('/home');
             } else {
                 setError(result.error);
             }

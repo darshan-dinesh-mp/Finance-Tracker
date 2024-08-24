@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config.js";
 
 
@@ -31,11 +31,10 @@ export const login = async (req, res) => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        // Optional: Retrieve additional user data from Firestore if needed
-        // const userDoc = await getDoc(doc(db, "users", user.uid));
-        // const userData = userDoc.data();
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        const userData = userDoc.data();
 
-        res.status(200).json({ message: "Login successful", user });
+        res.status(200).json({ message: "Login successful", userData });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

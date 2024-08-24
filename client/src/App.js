@@ -15,7 +15,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
-        {/* <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} /> */}
       </Routes>
     </BrowserRouter>
   );

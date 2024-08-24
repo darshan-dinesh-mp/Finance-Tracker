@@ -11,8 +11,9 @@ const AddTransaction = () => {
   const [transactionType, setTransactionType] = useState('Expense');
   const [paymentMethod, setPaymentMethod] = useState('UPI');
   const [error, setError] = useState('');
+  const userId = localStorage.getItem('userId');
+
   const navigate = useNavigate();
-  const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
 
   const handleAddTransaction = async (e) => {
     e.preventDefault();
@@ -27,8 +28,10 @@ const AddTransaction = () => {
 
       const result = await response.json();
       if (response.ok) {
-        navigate('/home');
+        console.log(result.message);
+        window.location.reload();
       } else {
+        console.log(result.message);
         setError(result.error);
       }
     } catch (error) {
