@@ -6,7 +6,7 @@ const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
     const [selectedTransaction, setSelectedTransaction] = useState(null);
     const navigate = useNavigate();
-    const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
+    const userId = localStorage.getItem('userId');
 
     const fetchTransactions = useCallback(async () => {
         if (!userId)
@@ -19,15 +19,14 @@ const Dashboard = () => {
             setTransactions(data);
         } catch (error) {
             console.error('Error fetching transactions:', error);
-            // setError('Failed to fetch transactions');
         }
     }, [userId]);
 
     useEffect(() => {
         if (!userId) {
-            navigate('/login'); // Redirect to login if userId is not available
+            navigate('/login');
         } else {
-            fetchTransactions(); // Fetch transactions on component mount
+            fetchTransactions();
         }
     }, [userId, navigate, fetchTransactions]);
 
@@ -85,7 +84,7 @@ const Dashboard = () => {
                                         : styles['expense-amount']
                                 }
                             >
-                                 ₹{selectedTransaction.amount}
+                                ₹{selectedTransaction.amount}
                             </span>
                         </p>
                         <p><strong>Type:</strong> {selectedTransaction.transactionType}</p>

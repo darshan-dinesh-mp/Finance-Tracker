@@ -22,7 +22,7 @@
     color: white;
 }
 
-.tabsContainer{
+.tabsContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,20 +61,19 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     fill: red;
-    transition: transform 0.3s, fill 0.3s;
+    transition: 0.3s, 0.3s;
 }
 
 .logout:hover {
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
 .content {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
-    /* Allow content area to scroll if necessary */
     background-color: #f5f5f5;
     box-sizing: border-box;
-    /* Ensure padding doesn't add extra height */
 }
