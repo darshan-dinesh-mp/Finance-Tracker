@@ -5,22 +5,35 @@ import styles from './Dashboard.module.css';
 const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
     const [selectedTransaction, setSelectedTransaction] = useState(null);
+    const [filter, setFilter] = useState('All');
+    const [sortOrder, setSortOrder] = useState('DateDesc');
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId');
 
     const fetchTransactions = useCallback(async () => {
-        if (!userId)
-            return;
+        if (!userId) return;
 
         try {
             const response = await fetch(`http://localhost:5000/api/transaction/${userId}`);
             const data = await response.json();
             console.log('Fetched transactions:', data);
-            setTransactions(data);
+
+            let filteredData = data;
+            if (filter !== 'All') {
+                filteredData = data.filter(transaction => transaction.transactionType === filter);
+            }
+
+            if (sortOrder === 'DateAsc') {
+                filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+            } else if (sortOrder === 'DateDesc') {
+                filteredData.sort((a, b) => new Date(b.date) - new Date(a.date));
+            }
+
+            setTransactions(filteredData);
         } catch (error) {
             console.error('Error fetching transactions:', error);
         }
-    }, [userId]);
+    }, [userId, filter, sortOrder]);
 
     useEffect(() => {
         if (!userId) {
@@ -41,6 +54,29 @@ const Dashboard = () => {
     return (
         <div className={styles['dashboard-container']}>
             <h3>Transactions</h3>
+
+            {/* Filter and Sort Controls */}
+            <div className={styles['controls']}>
+                <select
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                    className={styles['filter-select']}
+                >
+                    <option value="All">All</option>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+
+                <select
+                    value={sortOrder}
+                    onChange={(e) => setSortOrder(e.target.value)}
+                    className={styles['sort-select']}
+                >
+                    <option value="DateAsc">Date Ascending</option>
+                    <option value="DateDesc">Date Descending</option>
+                </select>
+            </div>
+
             <div className={styles['transaction-list']}>
                 {transactions.map((transaction) => (
                     <div
@@ -96,7 +132,6 @@ const Dashboard = () => {
                 </div>
             )}
         </div>
-
     );
 };
 

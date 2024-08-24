@@ -79,12 +79,72 @@ const AddTransaction = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="category">Category:</label>
-          <input
-            type="text"
+          <select
             id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-          />
+          >
+            <option value="">Select a category</option>
+            <optgroup label="Income">
+              <option value="Salary">Salary</option>
+              <option value="Freelance">Freelance</option>
+              <option value="Investments">Investments</option>
+              <option value="Gifts">Gifts</option>
+            </optgroup>
+            <optgroup label="Food & Drink">
+              <option value="Groceries">Groceries</option>
+              <option value="Restaurants">Restaurants</option>
+              <option value="Coffee">Coffee</option>
+              <option value="Fast Food">Fast Food</option>
+            </optgroup>
+            <optgroup label="Housing">
+              <option value="Rent">Rent</option>
+              <option value="Mortgage">Mortgage</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Repairs">Repairs</option>
+            </optgroup>
+            <optgroup label="Transportation">
+              <option value="Fuel">Fuel</option>
+              <option value="Public Transit">Public Transit</option>
+              <option value="Car Maintenance">Car Maintenance</option>
+              <option value="Tolls">Tolls</option>
+            </optgroup>
+            <optgroup label="Health & Fitness">
+              <option value="Medical">Medical</option>
+              <option value="Gym">Gym</option>
+              <option value="Health Insurance">Health Insurance</option>
+            </optgroup>
+            <optgroup label="Entertainment">
+              <option value="Movies">Movies</option>
+              <option value="Books">Books</option>
+              <option value="Concerts">Concerts</option>
+              <option value="Hobbies">Hobbies</option>
+            </optgroup>
+            <optgroup label="Clothing & Shopping">
+              <option value="Clothing">Clothing</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Home Goods">Home Goods</option>
+            </optgroup>
+            <optgroup label="Education">
+              <option value="Tuition">Tuition</option>
+              <option value="Books & Supplies">Books & Supplies</option>
+              <option value="Courses">Courses</option>
+            </optgroup>
+            <optgroup label="Travel">
+              <option value="Flights">Flights</option>
+              <option value="Accommodation">Accommodation</option>
+              <option value="Food & Drink (while traveling)">Food & Drink (while traveling)</option>
+              <option value="Activities & Tours">Activities & Tours</option>
+            </optgroup>
+            <optgroup label="Subscriptions & Donations">
+              <option value="Subscriptions">Subscriptions</option>
+              <option value="Donations">Donations</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="Pets">Pets</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </optgroup>
+          </select>
         </div>
 
         <div className={styles.formGroup}>
