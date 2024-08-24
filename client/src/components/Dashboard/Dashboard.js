@@ -57,7 +57,7 @@ const Dashboard = () => {
                                     : styles['expense-amount']
                             }
                         >
-                            {transaction.transactionType === 'Income' ? '↑' : '↓'}₹{transaction.amount}
+                            {transaction.transactionType === 'Income' ? '↑' : '↓'} ₹{transaction.amount}
                         </span>
                     </div>
                 ))}
@@ -66,12 +66,18 @@ const Dashboard = () => {
             {selectedTransaction && (
                 <div className={styles['transaction-popup']}>
                     <div className={styles['popup-content']}>
-                        <button className={styles['close-button']} onClick={closePopup}>
-                            X
-                        </button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 384 512"
+                            width="24px"
+                            onClick={closePopup}
+                            className={styles['closeButton']}
+                        >
+                            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                        </svg>
                         <h4>{selectedTransaction.name}</h4>
                         <p>
-                            <strong>Amount:</strong> ₹
+                            <strong>Amount: </strong>
                             <span
                                 className={
                                     selectedTransaction.transactionType === 'Income'
@@ -79,7 +85,7 @@ const Dashboard = () => {
                                         : styles['expense-amount']
                                 }
                             >
-                                {selectedTransaction.amount}
+                                 ₹{selectedTransaction.amount}
                             </span>
                         </p>
                         <p><strong>Type:</strong> {selectedTransaction.transactionType}</p>
@@ -91,6 +97,7 @@ const Dashboard = () => {
                 </div>
             )}
         </div>
+
     );
 };
 

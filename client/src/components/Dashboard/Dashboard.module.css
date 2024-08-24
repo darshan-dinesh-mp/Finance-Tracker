@@ -19,27 +19,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .transaction-item:hover {
     background-color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Color enhancements for financial tracking */
 .income-amount {
-    color: #28a745;
-    /* Green for income */
+    color: rgb(37, 184, 37);
     font-weight: bold;
 }
 
 .expense-amount {
-    color: #dc3545;
-    /* Red for expense */
+    color: rgb(215, 8, 8);
     font-weight: bold;
 }
 
-/* Pop-up styling */
 .transaction-popup {
     position: fixed;
     top: 50%;
@@ -48,27 +45,45 @@
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     width: 90%;
     max-width: 400px;
+    transition: transform 0.3s ease-out;
 }
 
 .popup-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
 }
 
-.close-button {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 18px;
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    color: #888;
+    fill: gray;
+    transition: fill 0.2s;
 }
 
-.close-button:hover {
-    color: #555;
+.closeButton:hover {
+    fill: #000000;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+p {
+    margin: 5px 0;
+    color: #666666;
+}
+
+strong {
+    color: #333333;
 }
