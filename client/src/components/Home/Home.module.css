@@ -1,10 +1,8 @@
-*::-webkit-scrollbar {
-    display: none;
-}
-
 .homeContainer {
     display: flex;
     height: 100vh;
+    overflow: hidden;
+    /* Prevent scrolling */
 }
 
 .sidebar {
@@ -12,10 +10,11 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 0px 2px 0px 2px;
-    padding: 0px 20px 0px 20px;
+    justify-content: space-between;
+    padding: 20px;
     height: 100%;
+    box-sizing: border-box;
+    /* Ensure padding doesn't add extra height */
 }
 
 .sidebar h2 {
@@ -23,47 +22,59 @@
     color: white;
 }
 
-
-.sidebar span {
-    cursor: pointer;
-    transition-duration: 0.3s;
-    text-decoration: none;
-    border-radius: 5px;
+.tabsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .tab {
     color: white;
     padding: 10px;
     font-weight: 100;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 5px;
 }
 
-.tab:hover {
-    transform: translateX(10px);
-}
-
+.tab:hover,
 .tab.active {
     transform: translateX(10px);
     font-weight: 600;
 }
 
-.content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: scroll;
-    background-color: #f5f5f5;
+.userSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.content div {
-    font-size: 24px;
-    color: #333;
+.username {
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 .logout {
-    color: red;
-    padding: 10px;
-    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    fill: red;
+    transition: transform 0.3s, fill 0.3s;
 }
 
 .logout:hover {
-    transform: translateX(10px)
+    transform: translateX(5px);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* Allow content area to scroll if necessary */
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    /* Ensure padding doesn't add extra height */
 }

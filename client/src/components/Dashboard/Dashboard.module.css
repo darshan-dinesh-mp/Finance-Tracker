@@ -79,11 +79,10 @@ strong {
 
 .closeButton {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    right: 10px;
     cursor: pointer;
     fill: gray;
-    transition: fill 0.2s;
+    transition-duration: 0.2s;
 }
 
 .closeButton:hover {
