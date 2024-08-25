@@ -108,7 +108,7 @@ const Dashboard = () => {
                 </select>
 
                 <div className={styles['date-filters']}>
-                    <label htmlFor="startDate">Start Date:</label>
+                    <label htmlFor="startDate">From:</label>
                     <input
                         type="date"
                         id="startDate"
@@ -116,8 +116,9 @@ const Dashboard = () => {
                         onChange={(e) => setStartDate(e.target.value)}
                         className={styles['date-input']}
                     />
-
-                    <label htmlFor="endDate">End Date:</label>
+                </div>
+                <div className={styles['date-filters']}>
+                    <label htmlFor="endDate">Till:</label>
                     <input
                         type="date"
                         id="endDate"

@@ -92,23 +92,29 @@ strong {
 .controls {
     margin-bottom: 20px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
-
 
 .filter-select,
 .sort-select {
-    margin-right: 10px;
-    padding: 5px;
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
+    width: 48%;
 }
 
-.date-filters{
-    background-color: red;
-    width: 100%;
+.date-filters {
+    display: flex;
+    align-items: center;
 }
+
 .date-input {
-    background-color: cyan;
-    /* padding: 0; */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
 }
