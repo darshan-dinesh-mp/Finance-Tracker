@@ -176,6 +176,7 @@ const AddTransaction = () => {
             <option value="UPI">UPI</option>
             <option value="Credit Card">Credit Card</option>
             <option value="Debit Card">Debit Card</option>
+            <option value="Net Banking">Net Banking</option>
             <option value="Cash">Cash</option>
           </select>
         </div>

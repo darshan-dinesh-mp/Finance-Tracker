@@ -6,7 +6,10 @@ const Dashboard = () => {
     const [transactions, setTransactions] = useState([]);
     const [selectedTransaction, setSelectedTransaction] = useState(null);
     const [filter, setFilter] = useState('All');
+    const [paymentMethodFilter, setPaymentMethodFilter] = useState('All');
     const [sortOrder, setSortOrder] = useState('DateDesc');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId');
 
@@ -19,10 +22,26 @@ const Dashboard = () => {
             console.log('Fetched transactions:', data);
 
             let filteredData = data;
+
+            // Apply type filter
             if (filter !== 'All') {
-                filteredData = data.filter(transaction => transaction.transactionType === filter);
+                filteredData = filteredData.filter(transaction => transaction.transactionType === filter);
             }
 
+            // Apply payment method filter
+            if (paymentMethodFilter !== 'All') {
+                filteredData = filteredData.filter(transaction => transaction.paymentMethod === paymentMethodFilter);
+            }
+
+            // Apply date range filter
+            if (startDate && endDate) {
+                filteredData = filteredData.filter(transaction => {
+                    const transactionDate = new Date(transaction.date);
+                    return transactionDate >= new Date(startDate) && transactionDate <= new Date(endDate);
+                });
+            }
+
+            // Apply sort order
             if (sortOrder === 'DateAsc') {
                 filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
             } else if (sortOrder === 'DateDesc') {
@@ -33,7 +52,7 @@ const Dashboard = () => {
         } catch (error) {
             console.error('Error fetching transactions:', error);
         }
-    }, [userId, filter, sortOrder]);
+    }, [userId, filter, paymentMethodFilter, sortOrder, startDate, endDate]);
 
     useEffect(() => {
         if (!userId) {
@@ -55,7 +74,6 @@ const Dashboard = () => {
         <div className={styles['dashboard-container']}>
             <h3>Transactions</h3>
 
-            {/* Filter and Sort Controls */}
             <div className={styles['controls']}>
                 <select
                     value={filter}
@@ -68,6 +86,19 @@ const Dashboard = () => {
                 </select>
 
                 <select
+                    value={paymentMethodFilter}
+                    onChange={(e) => setPaymentMethodFilter(e.target.value)}
+                    className={styles['filter-select']}
+                >
+                    <option value="All">All Payment Methods</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Net Banking">Net Banking</option>
+                </select>
+
+                <select
                     value={sortOrder}
                     onChange={(e) => setSortOrder(e.target.value)}
                     className={styles['sort-select']}
@@ -75,6 +106,26 @@ const Dashboard = () => {
                     <option value="DateAsc">Date Ascending</option>
                     <option value="DateDesc">Date Descending</option>
                 </select>
+
+                <div className={styles['date-filters']}>
+                    <label htmlFor="startDate">Start Date:</label>
+                    <input
+                        type="date"
+                        id="startDate"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className={styles['date-input']}
+                    />
+
+                    <label htmlFor="endDate">End Date:</label>
+                    <input
+                        type="date"
+                        id="endDate"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        className={styles['date-input']}
+                    />
+                </div>
             </div>
 
             <div className={styles['transaction-list']}>
