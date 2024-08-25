@@ -91,7 +91,9 @@ strong {
 
 .controls {
     margin-bottom: 20px;
+    width: 100%;
 }
+
 
 .filter-select,
 .sort-select {
@@ -100,4 +102,13 @@ strong {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
+}
+
+.date-filters{
+    background-color: red;
+    width: 100%;
+}
+.date-input {
+    background-color: cyan;
+    /* padding: 0; */
 }
