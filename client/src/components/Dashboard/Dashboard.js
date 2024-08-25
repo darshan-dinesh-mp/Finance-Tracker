@@ -23,17 +23,14 @@ const Dashboard = () => {
 
             let filteredData = data;
 
-            // Apply type filter
             if (filter !== 'All') {
                 filteredData = filteredData.filter(transaction => transaction.transactionType === filter);
             }
 
-            // Apply payment method filter
             if (paymentMethodFilter !== 'All') {
                 filteredData = filteredData.filter(transaction => transaction.paymentMethod === paymentMethodFilter);
             }
 
-            // Apply date range filter
             if (startDate && endDate) {
                 filteredData = filteredData.filter(transaction => {
                     const transactionDate = new Date(transaction.date);
@@ -41,7 +38,6 @@ const Dashboard = () => {
                 });
             }
 
-            // Apply sort order
             if (sortOrder === 'DateAsc') {
                 filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
             } else if (sortOrder === 'DateDesc') {
