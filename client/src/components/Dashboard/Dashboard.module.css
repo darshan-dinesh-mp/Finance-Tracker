@@ -110,6 +110,8 @@ strong {
 .date-filters {
     display: flex;
     align-items: center;
+    gap: 5px;
+    font-weight: 500;
 }
 
 .date-input {
