@@ -13,6 +13,30 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId');
 
+    const handleDeleteTransaction = async (transactionId) => {
+        try {
+            console.log(transactionId);
+            const response = await fetch('http://localhost:5000/api/transaction/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ transactionId }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                console.log("Response OK");
+                window.location.reload();
+            } else {
+                console.log("Response not OK:", result.error); // Log the error message from the server
+            }
+        } catch (error) {
+            console.log('An error occurred:', error.message); // Log the error message for better debugging
+        }
+    };
+
+
     const fetchTransactions = useCallback(async () => {
         if (!userId) return;
 
@@ -127,13 +151,12 @@ const Dashboard = () => {
 
             <div className={styles['transaction-list']}>
                 {transactions.map((transaction) => (
-                    <div className={styles['transaction-item']}>
+                    <div className={styles['transaction-item']} key={transaction.id}>
                         <div
-                            key={transaction.id}
                             // className={styles['transaction-item']}
-                            onClick={() => handleTransactionClick(transaction)}
+                            onClick={() => handleTransactionClick(transaction.id)}
                         >
-                            <div>{transaction.name}</div>
+                            <div><strong>{transaction.name}</strong></div>
                             <span
                                 className={
                                     transaction.transactionType === 'Income'
@@ -144,7 +167,7 @@ const Dashboard = () => {
                                 {transaction.transactionType === 'Income' ? '↑' : '↓'} ₹{transaction.amount}
                             </span>
                         </div>
-                        <span>
+                        <span onClick={() => handleDeleteTransaction(transaction.id)}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px">
                                 <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z" />
                             </svg>

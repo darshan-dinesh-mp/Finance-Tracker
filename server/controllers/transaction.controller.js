@@ -1,5 +1,5 @@
 import { db } from "../firebase/config.js";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";  // Make sure these are correctly imported
+import { addDoc, collection, doc, deleteDoc, getDocs, query, where } from "firebase/firestore";  // Make sure these are correctly imported
 
 
 export const createTransaction = async (req, res) => {
@@ -24,6 +24,21 @@ export const createTransaction = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
+
+
+export const deleteTransaction = async (req, res) => {
+    const { transactionId } = req.body;
+    console.log(transactionId);
+    try {
+        const transactionDocRef = doc(db, "Transaction", transactionId);
+        await deleteDoc(transactionDocRef);
+        res.status(200).json({ message: "Transaction deleted", id: transactionId });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ error: error.message });
+    }
+}
+
 
 
 export const getTransactions = async (req, res) => {

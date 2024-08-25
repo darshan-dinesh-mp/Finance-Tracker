@@ -29,8 +29,14 @@
     text-overflow: ellipsis;
 }
 
-svg {
+.transaction-item svg {
     margin-left: 10px;
+    fill: rgb(215, 8, 8);
+    transition-duration: 0.3s;
+}
+
+.transaction-item svg:hover {
+    fill: black;
 }
 
 .transaction-item:hover {
