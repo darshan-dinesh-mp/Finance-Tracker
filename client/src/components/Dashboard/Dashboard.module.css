@@ -17,9 +17,20 @@
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    justify-content: space-evenly;
     align-items: center;
-    transition-duration: 0.3s, 0.3s;
+    transition-duration: 0.3s;
+}
+
+.transaction-item div {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+svg {
+    margin-left: 10px;
 }
 
 .transaction-item:hover {
@@ -49,19 +60,16 @@
     z-index: 1000;
     width: 90%;
     max-width: 500px;
-    transition: transform 0.3s ease-out;
+    transition-duration: 0.3s;
 }
 
-.popup-content {
+.popupContent {
     display: flex;
     flex-direction: column;
-    gap: 15px;
     position: relative;
 }
 
-h4 {
-    margin: 0;
-    padding: 0;
+.popupContent h4 {
     font-size: 1.5rem;
     color: #333333;
 }
