@@ -36,13 +36,10 @@ const Login = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.thumbnail}>
-                <h1>Finance Tracker</h1>
-            </div>
             <div className={styles.loginContainer}>
                 <h2>Login</h2>
                 <form className={styles.loginForm} onSubmit={handleLogin}>
-                    <div>
+                    <div className={styles.formField}>
                         <label htmlFor="email">Email:</label>
                         <input
                             type="email"
@@ -52,7 +49,7 @@ const Login = () => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className={styles.formField}>
                         <label htmlFor="password">Password:</label>
                         <input
                             type="password"

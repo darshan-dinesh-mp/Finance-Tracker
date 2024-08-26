@@ -38,13 +38,10 @@ const Signup = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.thumbnail}>
-                <h1>Finance Tracker</h1>
-            </div>
             <div className={styles.signupContainer}>
-                <h2 className={styles.signupTitle}>Signup</h2>
+                <h2>Signup</h2>
                 <form className={styles.signupForm} onSubmit={handleSignup}>
-                    <div>
+                    <div className={styles.formField}>
                         <label htmlFor="name">Name:</label>
                         <input
                             type="text"
@@ -54,7 +51,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className={styles.formField}>
                         <label htmlFor="email">Email:</label>
                         <input
                             type="email"
@@ -64,7 +61,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className={styles.formField}>
                         <label htmlFor="password">Password:</label>
                         <input
                             type="password"
