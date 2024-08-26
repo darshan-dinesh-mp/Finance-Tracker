@@ -19,7 +19,7 @@ const EditTransaction = () => {
     const handleEditTransaction = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/api/transaction/edit`, {
+            const response = await fetch(`https://finance-tracker-6cye.onrender.com/api/transaction/edit`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

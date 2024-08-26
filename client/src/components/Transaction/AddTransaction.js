@@ -18,7 +18,7 @@ const AddTransaction = () => {
   const handleAddTransaction = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/transaction/insert', {
+      const response = await fetch('https://finance-tracker-6cye.onrender.com/api/transaction/insert', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
