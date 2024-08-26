@@ -3,6 +3,7 @@ import { login, signup } from "./controllers/auth.controller.js";
 import { createTransaction, deleteTransaction, editTransaction, getTransactions } from "./controllers/transaction.controller.js";
 import cors from 'cors';
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -16,4 +17,4 @@ app.post('/api/transaction/edit', editTransaction);
 app.get('/api/transaction/:userId', getTransactions);
 
 
-app.listen(5000, () => console.log(`Server listening on 5000`));
+app.listen(port, () => console.log('Server listening on 5000'));
