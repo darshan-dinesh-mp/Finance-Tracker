@@ -10,33 +10,53 @@
     margin-top: 20px;
 }
 
-.transaction-item {
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
+.transaction-item-main {
     cursor: pointer;
     display: flex;
-    gap: 10px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    gap: 10px;
     transition-duration: 0.3s;
 }
 
-.transaction-item div {
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.transaction-item {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    gap: 10px;
+    transition-duration: 0.3s;
+    border-radius: 5px;
 }
 
-.transaction-item svg {
-    margin-left: 10px;
+.transaction-item-main .control-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.control-options .delete-icon {
     fill: rgb(215, 8, 8);
     transition-duration: 0.3s;
 }
 
-.transaction-item svg:hover {
+.control-options .delete-icon:hover {
     fill: black;
+}
+
+.control-options .edit-icon {
+    fill: black;
+    transition-duration: 0.3s;
+}
+
+.control-options .edit-icon:hover {
+    fill: rgb(117, 117, 32);
 }
 
 .transaction-item:hover {
