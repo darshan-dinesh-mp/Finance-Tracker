@@ -39,8 +39,7 @@
 .AddTransactionContainer form input,
 .AddTransactionContainer form select,
 .AddTransactionContainer form textarea {
-    width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #444444;
     border-radius: 5px;
     background-color: #333333;
@@ -64,7 +63,7 @@
 .submitButton {
     background-color: #007bff;
     color: #ffffff;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
