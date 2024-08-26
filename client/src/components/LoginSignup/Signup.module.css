@@ -26,10 +26,17 @@
     justify-content: center;
 }
 
-.signupContainer h2 {
+.signupContainer .title {
     text-align: left;
     width: 100%;
     font-size: 24px;
+    color: #ffffff;
+}
+
+.signupContainer .title span {
+    text-align: left;
+    width: 100%;
+    font-size: medium;
     color: #ffffff;
 }
 

@@ -37,7 +37,9 @@ const Login = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.loginContainer}>
-                <h2>Login</h2>
+                <div className={styles.title}>
+                    <h3>Login<span> to view your transactions</span></h3>
+                </div>
                 <form className={styles.loginForm} onSubmit={handleLogin}>
                     <div className={styles.formField}>
                         <label htmlFor="email">Email:</label>

@@ -39,7 +39,9 @@ const Signup = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.signupContainer}>
-                <h2>Signup</h2>
+            <div className={styles.title}>
+                    <h3>Signup<span> to track your transactions</span></h3>
+                </div>
                 <form className={styles.signupForm} onSubmit={handleSignup}>
                     <div className={styles.formField}>
                         <label htmlFor="name">Name:</label>
