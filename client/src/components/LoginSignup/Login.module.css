@@ -11,7 +11,6 @@
     background-image: url('../../../public/Images/bg.png');
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
 }
 
 .loginContainer {
@@ -53,7 +52,7 @@
 .loginForm .formField label {
     color: #b0b0b0;
     margin-bottom: 5px;
-    font-size: 14px;
+    /* font-size: 14px; */
     width: 100%;
 }
 
