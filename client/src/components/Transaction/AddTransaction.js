@@ -28,14 +28,11 @@ const AddTransaction = () => {
 
       const result = await response.json();
       if (response.ok) {
-        console.log("added")
         window.location.reload();
       } else {
-        console.log("not added")
         setError(result.error);
       }
     } catch (error) {
-      console.log("not added 2")
       setError('An error occurred. Please try again.');
     }
   };
