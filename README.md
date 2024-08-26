@@ -37,4 +37,5 @@
             </ul>
         </li>
     </ol>
+    <p>Incase failure of hosted url. Try running locally</p
 </div>
