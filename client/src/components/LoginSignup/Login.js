@@ -25,7 +25,7 @@ const Login = () => {
                 localStorage.setItem('userId', result.userData.uid);
                 localStorage.setItem('username', result.userData.name);
                 setSuccess(result.message);
-                navigate('/home');
+                navigate('/');
             } else {
                 setError(result.error);
             }

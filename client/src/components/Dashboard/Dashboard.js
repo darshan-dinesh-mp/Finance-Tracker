@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 
     const handleEditTransaction = (transactionData) => {
-        navigate('/home', { state: { transaction: transactionData } });
+        navigate('/', { state: { transaction: transactionData } });
     };
     const handleDeleteTransaction = async (transactionId) => {
         try {
@@ -30,7 +30,6 @@ const Dashboard = () => {
 
             const result = await response.json();
             if (response.ok) {
-                console.log("Response OK");
                 window.location.reload();
             } else {
                 console.log("Response not OK:", result.error);

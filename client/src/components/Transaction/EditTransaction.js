@@ -38,7 +38,7 @@ const EditTransaction = () => {
 
             const result = await response.json();
             if (response.ok) {
-                navigate('/home');
+                navigate('/');
             } else {
                 setError(result.error || 'Failed to update transaction');
             }
@@ -48,7 +48,7 @@ const EditTransaction = () => {
     };
 
     const handleCancel = () => {
-        navigate('/home');
+        navigate('/');
     };
 
     return (

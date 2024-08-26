@@ -28,10 +28,8 @@ const AddTransaction = () => {
 
       const result = await response.json();
       if (response.ok) {
-        console.log(result.message);
-        window.location.reload();
+        navigate('/');
       } else {
-        console.log(result.message);
         setError(result.error);
       }
     } catch (error) {
