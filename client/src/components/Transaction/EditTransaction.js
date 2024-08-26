@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './EditTransaction.module.css';
 
@@ -63,6 +63,7 @@ const EditTransaction = () => {
                         <option value="Income">Income</option>
                     </select>
                 </div>
+
                 <div className={styles.formGroup}>
                     <label htmlFor="name">Transaction Name:</label>
                     <input
@@ -162,6 +163,7 @@ const EditTransaction = () => {
                         id="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        required
                     />
                 </div>
 

@@ -6,7 +6,7 @@
 }
 
 .sidebar {
-    background-color: #333;
+    background-color: black;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -14,7 +14,6 @@
     padding: 20px;
     height: 100%;
     box-sizing: border-box;
-    /* Ensure padding doesn't add extra height */
 }
 
 .sidebar h2 {
@@ -33,7 +32,7 @@
 
 .tab {
     color: white;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     font-weight: 100;
     cursor: pointer;
     transition: transform 0.3s;
