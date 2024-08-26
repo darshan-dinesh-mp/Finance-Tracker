@@ -1,0 +1,82 @@
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.EditTransactionContainer {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.EditTransactionContainer h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.EditTransactionContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.EditTransactionContainer form label {
+    font-weight: bold;
+    color: #555555;
+}
+
+.EditTransactionContainer form input,
+.EditTransactionContainer form select,
+.EditTransactionContainer form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.EditTransactionContainer form input:focus,
+.EditTransactionContainer form select:focus,
+.EditTransactionContainer form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.EditTransactionContainer form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submitButton {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}

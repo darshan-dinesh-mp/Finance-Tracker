@@ -1,6 +1,6 @@
 import express from "express"
 import { login, signup } from "./controllers/auth.controller.js";
-import { createTransaction, deleteTransaction, getTransactions } from "./controllers/transaction.controller.js";
+import { createTransaction, deleteTransaction, editTransaction, getTransactions } from "./controllers/transaction.controller.js";
 import cors from 'cors';
 const app = express();
 
@@ -12,6 +12,7 @@ app.post('/api/login', login);
 
 app.post('/api/transaction/insert', createTransaction);
 app.post('/api/transaction/delete', deleteTransaction);
+app.post('/api/transaction/edit', editTransaction);
 app.get('/api/transaction/:userId', getTransactions);
 
 
