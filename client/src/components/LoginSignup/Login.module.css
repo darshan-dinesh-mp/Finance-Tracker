@@ -8,19 +8,22 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: #121212;
     font-family: Arial, sans-serif;
 }
-
 
 .loginContainer {
     width: 50%;
     padding: 40px;
-    background-color: #fff;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.loginContainer h2{
+.loginContainer h2 {
     text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .thumbnail {
@@ -33,12 +36,13 @@
     font-size: 36px;
     font-weight: bold;
     height: 100vh;
+    border-radius: 0 10px 10px 0;
 }
 
 .loginForm {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -46,27 +50,29 @@ h2 {
     text-align: left;
     width: 100%;
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .loginForm label {
-    color: gray;
+    color: #b0b0b0;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
 .loginForm input {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #444444;
     border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
     font-size: 16px;
 }
 
 .loginButton {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     background-color: #007bff;
     color: white;
@@ -74,6 +80,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .loginButton:hover {
@@ -81,13 +88,13 @@ h2 {
 }
 
 .error {
-    color: red;
+    color: #ff4d4d;
     font-size: 14px;
     margin-top: 10px;
 }
 
 .success {
-    color: green;
+    color: #4caf50;
     font-size: 14px;
     margin-top: 10px;
 }
@@ -95,13 +102,15 @@ h2 {
 p {
     margin-top: 20px;
     font-size: 14px;
+    color: #e0e0e0;
 }
 
 a {
     color: #007bff;
+    transition: color 0.3s ease;
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #0056b3;
 }

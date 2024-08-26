@@ -20,21 +20,21 @@
 }
 
 .transaction-item {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
     border-radius: 5px;
     width: 100%;
     padding: 10px;
     cursor: pointer;
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
     gap: 10px;
     transition-duration: 0.3s;
     border-radius: 5px;
+    color: #e0e0e0;
 }
 
-.transaction-item-main .control-options{
+.transaction-item-main .control-options {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -47,11 +47,11 @@
 }
 
 .control-options .delete-icon:hover {
-    fill: black;
+    fill: #ffffff;
 }
 
 .control-options .edit-icon {
-    fill: black;
+    fill: #cccccc;
     transition-duration: 0.3s;
 }
 
@@ -60,8 +60,8 @@
 }
 
 .transaction-item:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #3c3c3c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .income-amount {
@@ -79,14 +79,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: #2b2b2b;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
     z-index: 1000;
     width: 90%;
     max-width: 500px;
     transition-duration: 0.3s;
+    color: #e0e0e0;
 }
 
 .popupContent {
@@ -97,17 +98,17 @@
 
 .popupContent h4 {
     font-size: 1.5rem;
-    color: #333333;
+    color: #ffffff;
 }
 
 p {
     margin: 8px 0;
-    color: #666666;
+    color: #cccccc;
     font-size: 1.1rem;
 }
 
 strong {
-    color: #333333;
+    color: #ffffff;
     font-size: 1.1rem;
 }
 
@@ -115,12 +116,12 @@ strong {
     position: absolute;
     right: 10px;
     cursor: pointer;
-    fill: gray;
+    fill: #888888;
     transition-duration: 0.2s;
 }
 
 .closeButton:hover {
-    fill: #000000;
+    fill: #ffffff;
 }
 
 .controls {
@@ -135,10 +136,11 @@ strong {
 .filter-select,
 .sort-select {
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #444444;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #3c3c3c;
     width: 48%;
+    color: #e0e0e0;
 }
 
 .date-filters {
@@ -146,11 +148,13 @@ strong {
     align-items: center;
     gap: 5px;
     font-weight: 500;
+    color: #e0e0e0;
 }
 
 .date-input {
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #444444;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
 }
