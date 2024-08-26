@@ -142,7 +142,7 @@ const Dashboard = () => {
                     />
                 </div>
                 <div className={styles['date-filters']}>
-                    <label htmlFor="endDate">Till:</label>
+                    <label htmlForid="endDate">Till:</label>
                     <input
                         type="date"
                         id="endDate"

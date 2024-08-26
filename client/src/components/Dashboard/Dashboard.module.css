@@ -47,16 +47,16 @@
 }
 
 .control-options .delete-icon:hover {
-    fill: #ffffff;
+    fill: #8d0000;
 }
 
 .control-options .edit-icon {
-    fill: #cccccc;
+    fill: rgb(176, 176, 0);
     transition-duration: 0.3s;
 }
 
 .control-options .edit-icon:hover {
-    fill: rgb(117, 117, 32);
+    fill: rgb(88, 88, 0);
 }
 
 .transaction-item:hover {
