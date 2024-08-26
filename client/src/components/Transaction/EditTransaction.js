@@ -47,6 +47,10 @@ const EditTransaction = () => {
         }
     };
 
+    const handleCancel = () => {
+        navigate('/home');
+    };
+
     return (
         <div className={styles.EditTransactionContainer}>
             <h2>Edit Transaction</h2>
@@ -192,7 +196,10 @@ const EditTransaction = () => {
                 </div>
 
                 <button type="submit" className={styles.submitButton}>
-                    Update Transaction
+                    Save
+                </button>
+                <button type="reset" className={styles.cancelButton} onClick={handleCancel}>
+                    Cancel
                 </button>
                 {error && <p className={styles.error}>{error}</p>}
             </form>

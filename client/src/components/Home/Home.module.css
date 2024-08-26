@@ -35,8 +35,6 @@
     font-weight: 100;
     cursor: pointer;
     transition: transform 0.3s;
-    text-decoration: underline 1px solid #555555;
-    text-underline-offset: 5px;
 }
 
 .tab:hover {
