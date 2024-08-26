@@ -28,6 +28,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     gap: 10px;
     transition-duration: 0.3s;
     border-radius: 5px;

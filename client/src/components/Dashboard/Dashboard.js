@@ -159,16 +159,21 @@ const Dashboard = () => {
                             className={styles['transaction-item']}
                             onClick={() => handleTransactionClick(transaction)}
                         >
-                            <div><strong>{transaction.name}</strong></div>
-                            <span
-                                className={
-                                    transaction.transactionType === 'Income'
-                                        ? styles['income-amount']
-                                        : styles['expense-amount']
-                                }
-                            >
-                                {transaction.transactionType === 'Income' ? '↑' : '↓'} ₹{transaction.amount}
-                            </span>
+                            <div style={{ width: '25%' }}><strong>{transaction.name}</strong></div>
+
+                            <div style={{ width: '25%' }}>
+                                <span
+                                    className={
+                                        transaction.transactionType === 'Income'
+                                            ? styles['income-amount']
+                                            : styles['expense-amount']
+                                    }
+                                >
+                                    {transaction.transactionType === 'Income' ? '↑' : '↓'} ₹{transaction.amount}
+                                </span>
+                            </div>
+                            <div style={{ width: '25%' }}><span>{transaction.date}</span></div>
+                            <div style={{ width: '25%' }}><span>{transaction.paymentMethod}</span></div>
                         </div>
                         <div className={styles['control-options']}>
                             <span onClick={(e) => handleEditTransaction(transaction)}>

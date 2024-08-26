@@ -1,5 +1,4 @@
 import { React, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import styles from './AddTransaction.module.css';
 
 const AddTransaction = () => {
@@ -13,7 +12,6 @@ const AddTransaction = () => {
   const [error, setError] = useState('');
   const userId = localStorage.getItem('userId');
 
-  const navigate = useNavigate();
 
   const handleAddTransaction = async (e) => {
     e.preventDefault();
