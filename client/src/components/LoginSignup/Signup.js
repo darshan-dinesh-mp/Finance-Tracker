@@ -20,7 +20,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await fetch('https://finance-tracker-6cye.onrender.com/api/signup', {
+            const response = await fetch('https://money-flow-web-app-1.onrender.com/api/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
