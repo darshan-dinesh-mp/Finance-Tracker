@@ -5,12 +5,11 @@ import Signup from './components/LoginSignup/Signup';
 import Home from './components/Home/Home';
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem('userId');
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

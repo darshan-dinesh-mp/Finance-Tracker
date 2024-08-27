@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Home.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Dashboard from '../Dashboard/Dashboard';
@@ -9,9 +9,15 @@ const Home = () => {
     const [activeTab, setActiveTab] = useState('dashboard');
     const navigate = useNavigate();
     const location = useLocation();
+    const isAuthenticated = !!localStorage.getItem('userId');
     const username = localStorage.getItem('username');
-
     const transactionToEdit = location.state?.transaction || null;
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        }
+    }, [navigate]);
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
