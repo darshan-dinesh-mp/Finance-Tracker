@@ -17,7 +17,7 @@ const Home = () => {
         if (!isAuthenticated) {
             navigate('/login');
         }
-    }, [navigate]);
+    }, [navigate, isAuthenticated]);
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
