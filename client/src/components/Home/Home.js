@@ -32,7 +32,7 @@ const Home = () => {
         <div className={styles.homeContainer}>
             <div className={styles.sidebar}>
                 <div className={styles.tabsContainer}>
-                    <h2>Finance Tracker</h2>
+                    <h2>Money Flow</h2>
                     <span
                         className={`${styles.tab} ${activeTab === 'dashboard' ? styles.active : ''}`}
                         onClick={() => handleTabChange('dashboard')}
