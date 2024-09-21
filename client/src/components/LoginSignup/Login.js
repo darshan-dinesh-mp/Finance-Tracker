@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
@@ -8,6 +8,13 @@ const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
+    const isAuthenticated = !!localStorage.getItem('userId');
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        }
+    }, [navigate, isAuthenticated]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
