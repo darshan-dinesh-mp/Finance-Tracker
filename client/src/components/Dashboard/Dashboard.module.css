@@ -122,7 +122,7 @@ strong {
 }
 
 .closeButton:hover {
-    fill: #ffffff;
+    fill: rgb(215, 8, 8);
 }
 
 .controls {
